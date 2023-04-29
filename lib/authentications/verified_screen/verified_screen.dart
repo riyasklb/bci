@@ -5,6 +5,9 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../members widgets/bottumbavigation.dart';
+//import '../../widgets/bottumbavigation.dart';
+
 class verified_Screen extends StatelessWidget {
   const verified_Screen({super.key});
 
@@ -40,7 +43,7 @@ class verified_Screen extends StatelessWidget {
                                 ),
                               ),
                               onPressed: () {
-                            Get.off(verified_Screen());
+                            Get.off(HelloConvexAppBar());
                               },
                               child: Text(
                                 'Done',

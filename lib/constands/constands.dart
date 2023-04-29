@@ -13,10 +13,10 @@ const SizedBox kwidth5 = SizedBox(width: 5);
 
 
 Color kgrey = Colors.grey;
-Color kblue = Color(0xFF3C73B1);
+Color kblue = Color(0xFF003366);
 Color kwhite = Colors.white;
 
-
+Color korange = Color(0xFFFF5003);
 
 
 final kpeople = Image.asset('assets/images/profile.svg');
