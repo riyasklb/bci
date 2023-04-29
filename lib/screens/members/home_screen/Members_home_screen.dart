@@ -26,7 +26,7 @@ class _Home_screen1State extends State<Home_screen1> {
           child: ClipPath(
             clipper: SinCosineWaveClipper(),
             child: Container(
-              height: 140,
+              height: 150,
               color: kblue,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

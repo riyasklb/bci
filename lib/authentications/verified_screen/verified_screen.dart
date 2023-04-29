@@ -31,7 +31,7 @@ class verified_Screen extends StatelessWidget {
             "Successfully",
             style: TextStyle(
                 fontSize: 19, color: Colors.black, ),
-          ),ksizedbox40,ksizedbox40,    InkWell(onTap: (){Get.to(onbording1());},
+          ),ksizedbox40,ksizedbox40,    InkWell(onTap: (){Get.to(HelloConvexAppBar());},
               child: Padding(
                 padding: const EdgeInsets.only(left: 20,right:20 ),
                 child: Container(
