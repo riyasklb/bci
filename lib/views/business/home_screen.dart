@@ -18,31 +18,32 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(250),
-          child: ClipPath(
-            clipper: SinCosineWaveClipper(),
-            child: Container(
-              height: 180,
-              color: kblue,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Image.asset('assets/images/projectlogo.png'),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Text(
-                      'Hello,Jhon',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
+        preferredSize: Size.fromHeight(250),
+        child: ClipPath(
+          clipper: SinCosineWaveClipper(),
+          child: Container(
+            height: 180,
+            color: kblue,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Image.asset('assets/images/projectlogo.png'),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Text(
+                    'Hello,Jhon',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
-                  Image.asset('assets/images/helps.png')
-                ],
-              ),
+                ),
+                Image.asset('assets/images/helps.png')
+              ],
             ),
-          )),
+          ),
+        ),
+      ),
       body: Column(
         children: [
           CarouselSlider(
@@ -111,8 +112,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Image.asset('assets/images/cupenimage.png'),
-                    Text('Coupon\nRedemention',textAlign: TextAlign.center,),
-                    
+                    Text(
+                      'Coupon\nRedemention',
+                      textAlign: TextAlign.center,
+                    ),
                   ],
                 ),
               ),
@@ -120,19 +123,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Image.asset('assets/images/wallet.png'),
-                    Text('Wallet\n',textAlign: TextAlign.center,),
+                    Text(
+                      'Wallet\n',
+                      textAlign: TextAlign.center,
+                    ),
                   ],
                 ),
               ),
               Container(
-                child: Column(
-                  children: [
-                    Image.asset('assets/images/contactadmin.png'),
-                    Text('Contact\n Admin',
-                    textAlign: TextAlign.center,)
-                  ],
-                )
-              )
+                  child: Column(
+                children: [
+                  Image.asset('assets/images/contactadmin.png'),
+                  Text(
+                    'Contact\n Admin',
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ))
             ],
           ),
           ksizedbox20,
@@ -143,30 +150,38 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Image.asset('assets/images/booking.png'),
-                    Text('Bookings\n\n',textAlign: TextAlign.center,)
+                    Text(
+                      'Bookings\n\n',
+                      textAlign: TextAlign.center,
+                    )
                   ],
                 ),
               ),
-                            Container(
+              Container(
                 child: Column(
                   children: [
                     Image.asset('assets/images/offers.png'),
-                    Text('Offers\n\n',textAlign: TextAlign.center,)
+                    Text(
+                      'Offers\n\n',
+                      textAlign: TextAlign.center,
+                    )
                   ],
                 ),
               ),
-                            Container(
+              Container(
                 child: Column(
                   children: [
                     Image.asset('assets/images/servicebooking.png'),
-                    Text('Service\nBookings\nRequest',textAlign: TextAlign.center,)
+                    Text(
+                      'Service\nBookings\nRequest',
+                      textAlign: TextAlign.center,
+                    )
                   ],
                 ),
               )
             ],
           ),
           Row(
-        
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 30),
@@ -193,7 +208,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           )
         ],
-        
       ),
     );
   }

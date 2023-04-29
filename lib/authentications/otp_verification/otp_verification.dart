@@ -62,29 +62,36 @@ class otp_varification extends StatelessWidget {
           ),
                   ksizedbox20 ,  ],
                   ),ksizedbox30,
-        SizedBox(
-                        height: 65,
-                        width: double.infinity,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20),
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Color.fromARGB(255, 177, 126, 60),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                ),
-                              ),
-                              onPressed: () {
-                            Get.off(verified_Screen());
-                              },
-                              child: Text(
-                                'veify',
-                                style: TextStyle(fontSize: 22,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                        ),
-                      ), ],
+     InkWell(onTap: (){Get.to(verified_Screen());},
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20,right:20 ),
+                child: Container(
+                  width: double.infinity,
+                  height: 65,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      4,
+                    ),
+                    gradient: const LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [
+                        Color(0xFFFF5C29),
+                        Color(0xFFFFCD38),
+                      ],
+                    ),
+                  ),
+                  child: Text(
+                    'Verify',
+                    style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),],
       ),
     );
   }

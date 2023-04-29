@@ -1,3 +1,4 @@
+import 'package:bci/authentications/onbording/onbording1.dart';
 import 'package:bci/constands/constands.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -17,7 +18,7 @@ class verified_Screen extends StatelessWidget {
       body: Column(
         children: [
           ksizedbox30,
-          Image.asset('assets/images/Group 5817.png'),
+          Center(child: Image.asset('assets/images/Group 5817.png')),
           Text(
             "Welcome :)",
             style: TextStyle(
@@ -30,29 +31,36 @@ class verified_Screen extends StatelessWidget {
             "Successfully",
             style: TextStyle(
                 fontSize: 19, color: Colors.black, ),
-          ),ksizedbox40,ksizedbox40,    SizedBox(
-                        height: 65,
-                        width: double.infinity,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20, right: 20),
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Color.fromARGB(255, 177, 126, 60),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                ),
-                              ),
-                              onPressed: () {
-                            Get.off(HelloConvexAppBar());
-                              },
-                              child: Text(
-                                'Done',
-                                style: TextStyle(fontSize: 22,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                        ),
-                      ),],
+          ),ksizedbox40,ksizedbox40,    InkWell(onTap: (){Get.to(onbording1());},
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20,right:20 ),
+                child: Container(
+                  width: double.infinity,
+                  height: 65,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      4,
+                    ),
+                    gradient: const LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [
+                        Color(0xFFFF5C29),
+                        Color(0xFFFFCD38),
+                      ],
+                    ),
+                  ),
+                  child: Text(
+                    'Done',
+                    style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),],
       ),
     );
   }

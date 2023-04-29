@@ -30,31 +30,61 @@ class landing_screen extends StatelessWidget {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Image.asset('assets/images/Group 5814.png'),
-              SizedBox(
-                height: 65,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 177, 126, 60),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                      ),
-                      onPressed: () {
-                        Get.off(Generate_otp());
-                      },
-                      child: Text(
-                        'Member Login',
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )),
-                ),
-              ),
+              Center(child: Image.asset('assets/images/Group 5814.png')),InkWell(
+              
+      onTap: (){Get.off(Generate_otp());},
+      child: Padding(
+        padding: const EdgeInsets.only(right: 20,left: 20),
+        child: Container(
+          width:double.infinity,
+          height: 65,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              4,
+            ),
+            gradient: const LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0xFFFF5C29),
+                Color(0xFFFFCD38),
+              ],
+            ),
+          ),
+      child: Text('Member Login',           style: TextStyle(
+                               fontSize: 22,
+                               color: Colors.white,
+                               fontWeight: FontWeight.bold),),
+        ),
+      ),
+    ),
+              // SizedBox(
+              //   height: 65,
+              //   width: double.infinity,
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(left: 20, right: 20),
+              //     child: ElevatedButton(
+              //         style: ElevatedButton.styleFrom(// primary: Colors.teal,
+              //  // onPrimary: Colors.green,
+              // //onSurface: Colors.orange,
+              // //backgroundColor: Color.fromARGB(255, 177, 126, 60),
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(4.0),
+              //           ),
+              //         ),
+              //         onPressed: () {
+              //           Get.off(Generate_otp());
+              //         },
+              //         child: Text(
+              //           'Member Login',
+              //           style: TextStyle(
+              //               fontSize: 22,
+              //               color: Colors.white,
+              //               fontWeight: FontWeight.bold),
+              //         )),
+              //   ),
+              // ),
               ksizedbox20,
               SizedBox(
                 height: 65,

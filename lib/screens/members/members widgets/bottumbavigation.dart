@@ -3,7 +3,8 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../home_screen/home_screen.dart';
+import '../../../views/business/home_screen.dart';
+import '../home_screen/Members_home_screen.dart';
 
 class HelloConvexAppBar extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class HelloConvexAppBar extends StatefulWidget {
 }
 
 class _HelloConvexAppBarState extends State<HelloConvexAppBar> {
-  final List1 = [Home_screen1(), p2(), p3(),p4(),p5()];
+  final List1 = [Home_screen1(),HomeScreen () , p3(),p4(),p5()];
 
   int selectedpage = 0;
 
