@@ -5,10 +5,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../otp_verification/otp_verification.dart';
-
-class Generate_otp extends StatelessWidget {
-  const Generate_otp({super.key});
+class verified_Screen extends StatelessWidget {
+  const verified_Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,25 +14,20 @@ class Generate_otp extends StatelessWidget {
       body: Column(
         children: [
           ksizedbox30,
-          Image.asset(
-            'assets/images/a.png',
-          ),
+          Image.asset('assets/images/Group 5817.png'),
           Text(
-            'Enter Your Phone Number',
-            style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),
-          ),ksizedbox20,Text('We will send you an One Time Password',style: TextStyle(fontSize:20 ),),Text('on this mobile number',style: TextStyle(fontSize: 20),),ksizedbox40, 
-       Padding(
-         padding: const EdgeInsets.all(8.0),
-         child: TextFormField(
-         decoration: InputDecoration(
-           prefixIcon: Image.asset('assets/images/Image 8.png'),
-           suffixIcon: Image.asset('assets/images/Path 471.png'),
-           hintText: 'Enter your username',
-           labelText: '+91 9633749714',
-           border: OutlineInputBorder(),
-         ),
-       ),
-       ),ksizedbox40,SizedBox(
+            "Welcome :)",
+            style: TextStyle(
+                fontSize: 22, color: Colors.black, fontWeight: FontWeight.w700),
+          ),ksizedbox30,   Text(
+            "Your account has been verified",
+            style: TextStyle(
+                fontSize: 19, color: Colors.black, ),
+          ), Text(
+            "Successfully",
+            style: TextStyle(
+                fontSize: 19, color: Colors.black, ),
+          ),ksizedbox40,ksizedbox40,    SizedBox(
                         height: 65,
                         width: double.infinity,
                         child: Padding(
@@ -47,17 +40,16 @@ class Generate_otp extends StatelessWidget {
                                 ),
                               ),
                               onPressed: () {
-                             Get.off(otp_varification ());
+                            Get.off(verified_Screen());
                               },
                               child: Text(
-                                'Generate Otp',
+                                'Done',
                                 style: TextStyle(fontSize: 22,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               )),
                         ),
-                      ),
- ],
+                      ),],
       ),
     );
   }

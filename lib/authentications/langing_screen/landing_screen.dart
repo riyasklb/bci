@@ -68,7 +68,7 @@ class landing_screen extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               )),
                         ),
-                      ),ksizedbox30
+                      ),ksizedbox30,
         ],
       ),  
         backgroundColor: Colors.transparent),
