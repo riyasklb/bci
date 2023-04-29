@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../members widgets/bottumbavigation.dart';
+import '../../screens/members/members widgets/bottumbavigation.dart';
 //import '../../widgets/bottumbavigation.dart';
 
 class verified_Screen extends StatelessWidget {
