@@ -15,5 +15,9 @@ Color kwhite = Colors.white;
 Color korange = Color(0xFFFF5003);
 Color kOrange = Color(0xFFff5003);
 
+// Color kOrange = Color(0xFFFF5003);
+
+Color kyellow = Color(0xFFff9021);
+
 final kpeople = Image.asset('assets/images/profile.svg');
 //final kimgadd = SvgPicture.asset('assets/images/add.svg');

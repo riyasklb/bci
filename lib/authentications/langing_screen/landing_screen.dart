@@ -7,7 +7,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../constands/constands.dart';
-import '../../views/business/home_screen.dart';
+import '../../screens/members/members widgets/bottumbavigation.dart';
+import '../../views/busines_widget/bottumnavigation.dart';
+import '../../views/business/business_home_screen.dart';
 
 class landing_screen extends StatelessWidget {
   const landing_screen({super.key});
@@ -99,7 +101,8 @@ class landing_screen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Get.to(HomeScreen());
+                        Get.to(HomeBottomnavigationBar
+                        ());
                       },
                       child: Text(
                         'Bussiness login',
