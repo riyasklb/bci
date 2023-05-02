@@ -20,7 +20,9 @@ class _MyDropdownState extends State<MyDropdown> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: DropdownButtonFormField<String>(style: TextStyle(color: Colors.grey),
-        decoration: InputDecoration( floatingLabelBehavior: FloatingLabelBehavior
+        decoration: InputDecoration( 
+
+          floatingLabelBehavior: FloatingLabelBehavior
                                     .never,
       fillColor: kblue,
       focusColor: kblue,
@@ -30,7 +32,7 @@ class _MyDropdownState extends State<MyDropdown> {
         borderRadius: BorderRadius.circular(22),
       ),
           labelText: widget.label,
-          
+          labelStyle: TextStyle(color: kwhite),
         ),
         value: _selectedOption,
         onChanged: (newValue) {
