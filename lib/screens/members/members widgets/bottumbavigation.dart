@@ -13,7 +13,8 @@ class HelloConvexAppBar extends StatefulWidget {
 }
 
 class _HelloConvexAppBarState extends State<HelloConvexAppBar> {
-  final List1 = [Home_screen1(), Members_search_screen(), p3(),p4(),p5()];
+  final List1 = [Home_screen1(), Members_search_screen(title: 'Search Result',
+          items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],), p3(),p4(),p5()];
 
   int selectedpage = 0;
 
@@ -21,7 +22,7 @@ class _HelloConvexAppBarState extends State<HelloConvexAppBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: List1[selectedpage],
-      bottomNavigationBar: ConvexAppBar(//activeColor: korange
+      bottomNavigationBar: ConvexAppBar(
      //  ,
         backgroundColor: kblue,
         color: kwhite,

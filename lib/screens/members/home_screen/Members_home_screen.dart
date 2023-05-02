@@ -4,9 +4,12 @@ import 'package:custom_clippers/custom_clippers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../constands/constands.dart';
+import '../coupen/coupons_screen.dart';
+import '../liquer_screen/liquer_screen.dart';
 
 class Home_screen1 extends StatefulWidget {
   const Home_screen1({super.key});
@@ -75,7 +78,8 @@ class _Home_screen1State extends State<Home_screen1> {
             ],
           ),
           ksizedbox20,
-          Image.asset('assets/images/Group 5755.png'),
+          InkWell(onTap: (){Get.to(Coupens_members());},
+            child: Image.asset('assets/images/Group 5755.png')),
           ksizedbox20,
           Row(
             children: [
@@ -109,14 +113,16 @@ class _Home_screen1State extends State<Home_screen1> {
                   )
                 ],
               ),
-              Column(
-                children: [
-                  Image.asset('assets/images/Group 5828.png'),
-                  Text(
-                    'Liquer',
-                    style: TextStyle(fontWeight: FontWeight.w700),
-                  )
-                ],
+              InkWell(onTap: (){Get.to(liquer_screen());},
+                child: Column(
+                  children: [
+                    Image.asset('assets/images/Group 5828.png'),
+                    Text(
+                      'Liquer',
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    )
+                  ],
+                ),
               ),
               Column(
                 children: [

@@ -4,51 +4,82 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../../constands/constands.dart';
+import '../members widgets/bropdown.dart';
+import '../members widgets/gridciew.dart';
 
-class Members_search_screen extends StatelessWidget {
-  const Members_search_screen({super.key});
+class Members_search_screen extends StatefulWidget {
+  Members_search_screen({super.key, required this.title, required this.items});
+  final String title;
+  final List<String> items;
+
+  @override
+  State<Members_search_screen> createState() => _Members_search_screenState();
+}
+
+class _Members_search_screenState extends State<Members_search_screen> {
+  final List<String> options = ['Option 1', 'Option 2', 'Option 3'];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: kwhite, appBar: PreferredSize(
+    return Scaffold(
+      backgroundColor: kwhite,
+      appBar: PreferredSize(
           preferredSize: Size.fromHeight(250),
           child: ClipPath(
             clipper: SinCosineWaveClipper(),
             child: Container(
-              height: 160,
+              height: 190,
               color: kblue,
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
-                  children: [ksizedbox20,
+                  children: [
+                    ksizedbox20,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Search',style: TextStyle(fontSize: 22,color: kwhite),),
-                      
-                        Icon(
-                          Icons.question_mark,
-                          color: kwhite,
-                        )
+                        Text(
+                          'Search',
+                          style: TextStyle(fontSize: 22, color: kwhite),
+                        ),
+                        Image.asset('assets/images/3669173_help_ic_icon.png')
                       ],
-                    ),ksizedbox20,
-                TextField(
- // controller: _controller,
- 
-  decoration: InputDecoration(
-    fillColor: kwhite,
-    focusColor: kwhite,
-    isDense: true,
-    filled: true,
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4.0),
-    ),
-    suffixIcon: Image.asset('assets/images/XMLID_223_.png')
-  ),
-) ],
+                    ),
+                    ksizedbox20,
+                    TextField(
+                      // controller: _controller,
+
+                      decoration: InputDecoration(
+                          fillColor: kwhite,
+                          focusColor: kwhite,
+                          isDense: true,
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4.0),
+                          ),
+                          suffixIcon:
+                              Image.asset('assets/images/XMLID_223_.png')),
+                    ),
+                  ],
                 ),
               ),
             ),
-          )),);
+          )),
+      body: ListView(
+        children: [
+          MyDropdown(
+            label: 'Result',
+            options: [],
+          ),
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: MyGridView(
+              title: 'Search Result',
+              items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
