@@ -1,31 +1,33 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-class IntroductionScreens extends StatefulWidget {
-  const IntroductionScreens({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<IntroductionScreens> createState() => _IntroductionScreensState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _IntroductionScreensState extends State<IntroductionScreens> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
+class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.red,
-      body: Container(
-        color: Colors.red,
-        child: IntroductionScreen(
-            globalBackgroundColor: Colors.amber,
-            pages: [
+    var size = MediaQuery.of(context).size;
+    return Container(
+      decoration:const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/01 Login Screen Options.png"),
+          fit: BoxFit.fill
+          ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Stack(
+          children: [
+            IntroductionScreen(
+                  pages: [
               PageViewModel(
                 title: 'Confidentiality of Information and\nPrivacy Protection',
                 body:
@@ -68,19 +70,19 @@ class _IntroductionScreensState extends State<IntroductionScreens> {
                 //getPageDecoration, a method to customise the page style
                 decoration: getPageDecoration(),
               ),
-            ],
-            onDone: () {
+                  ],
+                  onDone: () {
               if (kDebugMode) {
                 print("Done clicked");
               }
-            },
-            //ClampingScrollPhysics prevent the scroll offset from exceeding the bounds of the content.
-            scrollPhysics: const ClampingScrollPhysics(),
-            showDoneButton: true,
-            showNextButton: true,
-            showSkipButton: true,
-            isBottomSafeArea: true,
-            skip: Row(
+                  },
+                  //ClampingScrollPhysics prevent the scroll offset from exceeding the bounds of the content.
+                  scrollPhysics: const ClampingScrollPhysics(),
+                  showDoneButton: true,
+                  showNextButton: true,
+                  showSkipButton: true,
+                  isBottomSafeArea: true,
+                  skip: Row(
               children: const [
                 Text("Skip",
                     style: TextStyle(
@@ -90,16 +92,16 @@ class _IntroductionScreensState extends State<IntroductionScreens> {
                   color: Colors.blue,
                 ),
               ],
-            ),
-            next: Row(
+                  ),
+                  next: Row(
               children: const [
                 Icon(
                   Icons.keyboard_double_arrow_right_outlined,
                   color: Colors.red,
                 ),
               ],
-            ),
-            done: Padding(
+                  ),
+                  done: Padding(
               padding: const EdgeInsets.only(left: 40),
               child: InkWell(
                 onTap: () {
@@ -117,27 +119,34 @@ class _IntroductionScreensState extends State<IntroductionScreens> {
                   ],
                 ),
               ),
-            ),
-            dotsDecorator: getDotsDecorator()),
+                  ),
+                  dotsDecorator: getDotsDecorator()),
+          ],
+        ),
       ),
     );
   }
 
-  //widget to add the image on screen
+//widget to add the image on screen
   Widget buildImage(String imagePath) {
     return Center(
         child: Image.asset(
       imagePath,
       width: 450,
-      height: 200,
+      height: 300,
     ));
   }
 
   //method to customise the page style
   PageDecoration getPageDecoration() {
-    return const PageDecoration(
+    return  PageDecoration(
+      boxDecoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/01 Login Screen Options.png"),
+          fit: BoxFit.fill
+          ),
+      ),
       imagePadding: EdgeInsets.only(top: 100),
-      pageColor: Color(0xff5800FF),
       bodyPadding: EdgeInsets.only(top: 8, left: 20, right: 20),
       titlePadding: EdgeInsets.only(top: 30),
       titleTextStyle: TextStyle(
@@ -159,3 +168,6 @@ class _IntroductionScreensState extends State<IntroductionScreens> {
     );
   }
 }
+
+
+

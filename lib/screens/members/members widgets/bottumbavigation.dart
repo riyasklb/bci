@@ -1,4 +1,5 @@
 import 'package:bci/constands/constands.dart';
+import 'package:bci/screens/members/settings_screen/settings_screen.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class HelloConvexAppBar extends StatefulWidget {
 
 class _HelloConvexAppBarState extends State<HelloConvexAppBar> {
   final List1 = [Home_screen1(), Members_search_screen(title: 'Search Result',
-          items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],), p3(),p4(),p5()];
+          items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],), p3(),p4(),SettingScreen()];
 
   int selectedpage = 0;
 
