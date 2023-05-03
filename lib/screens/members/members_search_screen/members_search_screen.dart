@@ -71,13 +71,13 @@ class _Members_search_screenState extends State<Members_search_screen> {
             label: 'Result',
             options: [],
           ),
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: MyGridView(
-              title: 'Search Result',
-              items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-            ),
-          ),
+       MyGridView(title: 'Search Result', image: [
+            
+              'assets/images/NoPath - Copy (32).png',
+              'assets/images/NoPath - Copy (33).png',
+              'assets/images/NoPath - Copy (34).png',
+              'assets/images/NoPath - Copy (35).png'
+            ]),
         ],
       ),
     );

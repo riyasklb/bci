@@ -8,8 +8,10 @@ import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../constands/constands.dart';
+import '../../../views/business/notification_screen.dart';
 import '../coupen/coupons_screen.dart';
 import '../liquer_screen/liquer_screen.dart';
+import '../offer screen/offer_screen_grid.dart';
 
 class Home_screen1 extends StatefulWidget {
   const Home_screen1({super.key});
@@ -45,17 +47,70 @@ class _Home_screen1State extends State<Home_screen1> {
                           color: Colors.white),
                     ),
                   ),
-                  Icon(
-                    Icons.notification_add,
+                IconButton(onPressed: (){Get.to(NotificationScreen());}, icon:   Icon(
+                    Icons.notifications,
                     color: kwhite,
-                  )
+                  ))
                 ],
               ),
             ),
           )),
       body: ListView(
         physics: BouncingScrollPhysics(),
-        children: [
+        children: [    CarouselSlider(
+              carouselController: sliderController,
+              items: [
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image:
+                              AssetImage('assets/images/Scroll Group 11.png'))),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image:
+                              AssetImage('assets/images/Group 5767.png'))),
+                ), Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image:
+                              AssetImage('assets/images/Scroll Group 11.png'))),
+                ),
+              ],
+              options: CarouselOptions(
+                height: 170,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    activeIndex = index;
+                  });
+                },
+                aspectRatio: 16 / 9,
+                viewportFraction: 1,
+                initialPage: 0,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 3),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.3,
+                scrollDirection: Axis.horizontal,
+              )),  Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AnimatedSmoothIndicator(
+                activeIndex: activeIndex,
+                count: 3,
+                effect: ScaleEffect(
+                    dotHeight: 9.0,
+                    dotWidth: 9.0,
+                    dotColor: kgrey,
+                    activeDotColor: kblue),
+              ),
+            ],
+          ),
           Row(
             children: [
               kwidth10,
@@ -199,9 +254,11 @@ class _Home_screen1State extends State<Home_screen1> {
                       fontSize: 22,
                       fontWeight: FontWeight.w700),
                 ),
-                Text(
-                  'See All',
-                  style: TextStyle(color: korange),
+                InkWell(onTap: (){Get.to(offer_screen());},
+                  child: Text(
+                    'See All',
+                    style: TextStyle(color: korange),
+                  ),
                 )
               ],
             ),

@@ -74,7 +74,8 @@ class _WalletScreenState extends State<WalletScreen> {
               ),
             ),
           )),
-      body: ListView(children: [
+      body: ListView(physics: BouncingScrollPhysics(),
+        children: [
         Column(
           children: [
             Row(

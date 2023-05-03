@@ -1,3 +1,6 @@
+import 'package:bci/screens/members/liquer_screen/widget/like.dart';
+import 'package:bci/screens/members/liquer_screen/widget/popular_Wine.dart';
+import 'package:bci/screens/members/liquer_screen/wine_screen.dart';
 import 'package:custom_clippers/custom_clippers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -8,6 +11,9 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../constands/constands.dart';
 import 'dart:math' as math;
 
+import '../../../views/business/notification_screen.dart';
+import 'cart_screen.dart';
+
 class liqor_brands extends StatelessWidget {
   const liqor_brands({super.key});
 
@@ -15,13 +21,13 @@ class liqor_brands extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(300),
+          preferredSize: Size.fromHeight(295),
           child: Column(
             children: [
               ClipPath(
                 clipper: SinCosineWaveClipper(),
                 child: Container(
-                  height: 150,
+                  height: 140,
                   color: kblue,
                   child: Padding(
                     padding: const EdgeInsets.all(15),
@@ -42,10 +48,10 @@ class liqor_brands extends StatelessWidget {
                                 color: kwhite),
                           ),
                         ),
-                        Icon(
-                          Icons.notifications,
-                          color: kwhite,
-                        )
+                      IconButton(onPressed: (){Get.to(NotificationScreen());}, icon:   Icon(
+                    Icons.notifications,
+                    color: kwhite,
+                  ))
                       ],
                     ),
                   ),
@@ -72,7 +78,8 @@ class liqor_brands extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 33, fontWeight: FontWeight.w600),
                     ),
-                    Image.asset('assets/images/Cart.png')
+                    InkWell(onTap: (){Get.to(cart_screen());},
+                      child: Image.asset('assets/images/Cart.png'))
                   ],
                 ),
               ),
@@ -98,96 +105,155 @@ class liqor_brands extends StatelessWidget {
               ),
             ],
           )),
-      body: Column(
+      body: ListView(
         children: [
-          
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-           
+          Column(
             children: [
-              Container(
-                 height: 150,
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: Container(
-                        height: 110,
-                        width: 110,
-                        decoration: BoxDecoration(
-                            color: kblue, borderRadius: BorderRadius.circular(10)),
-                      ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: 150,
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40),
+                          child: Container(
+                            height: 110,
+                            width: 110,
+                            decoration: BoxDecoration(
+                                color: kblue,
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                        ),
+                        Positioned(
+                            bottom: 0,
+                            left: 15,
+                            child: Image.asset(
+                              'assets/images/Vector Smart Object.png',
+                              height: 130,
+                            )),
+                        Positioned(
+                          bottom: 15,
+                          right: 5,
+                          child: Transform.rotate(
+                            angle: -math.pi / 2.0,
+                            child: Text(
+                              "Beer",
+                              style: TextStyle(color: Color(0xFFD1D1D1)),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                    Positioned(
-                      bottom: 0,
-                      left: 15,
-                      child: Image.asset('assets/images/Vector Smart Object.png',height: 130,)),
-                      Positioned(
-                      bottom: 15,
-                      right: 5,
-                       child: Transform.rotate(
-                       angle: -math.pi / 2.0,
-                       child: Text("Beer",style: TextStyle(color: Color(0xFFD1D1D1)),),
-                     ),
-                     )
+                  ),
+                  Container(
+                    height: 150,
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40),
+                          child: Container(
+                            height: 110,
+                            width: 110,
+                            decoration: BoxDecoration(
+                                color: kblue,
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                        ),
+                        Positioned(
+                            bottom: 0,
+                            left: 15,
+                            child: Image.asset(
+                              'assets/images/Vector Smart Object-1.png',
+                              height: 130,
+                            )),
+                        Positioned(
+                          bottom: 15,
+                          right: 5,
+                          child: Transform.rotate(
+                            angle: -math.pi / 2.0,
+                            child: Text(
+                              "Wine",
+                              style: TextStyle(color: kwhite),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 150,
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40),
+                          child: Container(
+                            height: 110,
+                            width: 110,
+                            decoration: BoxDecoration(
+                                color: Color(0xFFD1D1D1),
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                        ),
+                        Positioned(
+                            bottom: 0,
+                            left: 15,
+                            child: Image.asset(
+                              'assets/images/Vector Smart Object-2.png',
+                              height: 130,
+                            )),
+                        Positioned(
+                          bottom: 19,
+                          right: 5,
+                          child: Transform.rotate(
+                            angle: -math.pi / 2.0,
+                            child: Text(
+                              "whiskey",
+                              style: TextStyle(color: kwhite),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              ksizedbox40,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Popular Wine',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                    InkWell(onTap: (){Get.to( wine_screen());},
+                      child: Text(
+                        'See ALL',
+                        style: TextStyle(fontWeight: FontWeight.w700),
+                      ),
+                    )
                   ],
                 ),
               ),
-           Container(
-                 height: 150,
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: Container(
-                        height: 110,
-                        width: 110,
-                        decoration: BoxDecoration(
-                            color: kblue, borderRadius: BorderRadius.circular(10)),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      left: 15,
-                      child: Image.asset('assets/images/Vector Smart Object-1.png',height: 130,)),
-                      Positioned(
-                      bottom: 15,
-                      right: 5,
-                       child: Transform.rotate(
-                       angle: -math.pi / 2.0,
-                       child: Text("Wine",style: TextStyle(color: kwhite),),
-                     ),
-                     )
-                  ],
-                ),
-              ),Container(
-                 height: 150,
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: Container(
-                        height: 110,
-                        width: 110,
-                        decoration: BoxDecoration(
-                            color:Color(0xFFD1D1D1) , borderRadius: BorderRadius.circular(10)),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      left: 15,
-                      child: Image.asset('assets/images/Vector Smart Object-2.png',height: 130,)),
-                      Positioned(
-                      bottom: 19,
-                      right: 5,
-                       child: Transform.rotate(
-                       angle: -math.pi / 2.0,
-                       child: Text("whiskey",style: TextStyle(color: kwhite),),
-                     ),
-                     )
-                  ],
-                ),
-              ), ],
-          )
+              ksizedbox40,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Wine_widget(
+                    wineimg: 'assets/images/Layer 3442.png',
+                  ),
+                  Wine_widget(
+                    wineimg: 'assets/images/59_Barefoot-Cellars-California-Chardonnay-750ml.png',
+                  )
+                ],
+              ),
+              ksizedbox40
+            ],
+          ),
         ],
       ),
     );

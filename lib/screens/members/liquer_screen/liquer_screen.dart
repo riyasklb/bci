@@ -6,7 +6,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../../constands/constands.dart';
-import '../members widgets/liquers_containers.dart';
+import '../../../views/business/notification_screen.dart';
+import 'widget/liquers_containers.dart';
 
 class liquer_screen extends StatelessWidget {
   const liquer_screen({super.key});
@@ -42,10 +43,10 @@ class liquer_screen extends StatelessWidget {
                                 color: kwhite),
                           ),
                         ),
-                        Icon(
-                          Icons.notifications,
-                          color: kwhite,
-                        )
+                     IconButton(onPressed: (){Get.to(NotificationScreen());}, icon:   Icon(
+                    Icons.notifications,
+                    color: kwhite,
+                  ))
                       ],
                     ),
                   ),

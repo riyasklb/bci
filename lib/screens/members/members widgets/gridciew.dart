@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyGridView extends StatelessWidget {
-  final String title;
-  final List<String> items;
+   String title;
+    List image;
 
-  MyGridView({required this.title, required this.items});
+  MyGridView({required this.title, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +29,10 @@ class MyGridView extends StatelessWidget {
             crossAxisSpacing: 8,
             mainAxisSpacing: 8,
           ),
-          itemCount: items.length,
+          itemCount: image.length,
           itemBuilder: (BuildContext context, int index) {
-            return Container(
-              color: Colors.grey[200],
-              child: Center(
-                child: Text(items[index]),
-              ),
+            return Center(
+              child: Image.asset(image[index].toString())
             );
           },
         ),

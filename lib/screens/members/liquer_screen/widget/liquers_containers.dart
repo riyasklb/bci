@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
-import '../../../constands/constands.dart';
-import '../liquer_screen/liquer_brand_screen.dart';
+import '../../../../constands/constands.dart';
+import '../liquer_brand_screen.dart';
 
 class members_liquer_container extends StatelessWidget {
   const members_liquer_container({super.key});

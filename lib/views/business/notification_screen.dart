@@ -44,11 +44,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     'Get in new subscription options\nenjoys and Welcome to BCI process\nused for offers',
     'Your amount transaction for your \noficial account and More check \namount your wallet'
   ];
-  List yesterdaysubtitle = [
-    '2 days ago',
-    '2 days ago',
-    '2 days ago'
-  ];
+  List yesterdaysubtitle = ['2 days ago', '2 days ago', '2 days ago'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
