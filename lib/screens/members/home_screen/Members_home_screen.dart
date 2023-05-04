@@ -1,3 +1,4 @@
+import 'package:bci/screens/members/flight_booking_screens/flight_booking_landing_screen.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:custom_clippers/custom_clippers.dart';
@@ -133,8 +134,11 @@ class _Home_screen1State extends State<Home_screen1> {
             ],
           ),
           ksizedbox20,
-          InkWell(onTap: (){Get.to(Coupens_members());},
-            child: Image.asset('assets/images/Group 5755.png')),
+          InkWell(
+              onTap: () {
+                Get.to(Coupens_members());
+              },
+              child: Image.asset('assets/images/Group 5755.png')),
           ksizedbox20,
           Row(
             children: [
@@ -150,14 +154,19 @@ class _Home_screen1State extends State<Home_screen1> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  Image.asset('assets/images/Group 5778.png'),
-                  Text(
-                    'Flight',
-                    style: TextStyle(fontWeight: FontWeight.w700),
-                  )
-                ],
+              InkWell(
+                onTap: () {
+                  Get.to(() => const FlightBookingLandingScreen());
+                },
+                child: Column(
+                  children: [
+                    Image.asset('assets/images/Group 5778.png'),
+                    const Text(
+                      'Flight',
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    )
+                  ],
+                ),
               ),
               Column(
                 children: [
@@ -168,7 +177,10 @@ class _Home_screen1State extends State<Home_screen1> {
                   )
                 ],
               ),
-              InkWell(onTap: (){Get.to(liquer_screen());},
+              InkWell(
+                onTap: () {
+                  Get.to(liquer_screen());
+                },
                 child: Column(
                   children: [
                     Image.asset('assets/images/Group 5828.png'),
@@ -263,23 +275,25 @@ class _Home_screen1State extends State<Home_screen1> {
               ],
             ),
           ),
- Container(
-              height: 150,
-               child: ListView.builder(scrollDirection: Axis.horizontal,
-                         physics: const BouncingScrollPhysics(),
-                         itemCount: 6,
-                         shrinkWrap: true,
-                         itemBuilder: (context, index) {
-                return  Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child:  Container(
-                    height: 106,
-                    width: 144,
-                    child: Image.asset('assets/images/aaaa.png'),
-                  ),
-                );
-                         }),
-             )],
+          Container(
+            height: 150,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemCount: 6,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 106,
+                      width: 144,
+                      child: Image.asset('assets/images/aaaa.png'),
+                    ),
+                  );
+                }),
+          )
+        ],
       ),
     );
   }
