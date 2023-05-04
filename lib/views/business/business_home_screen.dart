@@ -1,5 +1,6 @@
 import 'package:bci/constands/constands.dart';
 import 'package:bci/views/busines_widget/bottumnavigation.dart';
+import 'package:bci/views/home_screen/availability_scree.dart';
 import 'package:bci/views/home_screen/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:custom_clippers/custom_clippers.dart';
@@ -7,6 +8,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../home_screen/contact_admin.dart';
 import '../home_screen/coupon_screen.dart';
 
 class BusinessHomeScreen extends StatefulWidget {
@@ -150,16 +152,21 @@ class _BusinessHomeScreenState extends State<BusinessHomeScreen> {
                     ),
                   ),
                 ),
-                Container(
-                    child: Column(
-                  children: [
-                    Image.asset('assets/images/contactadmin.png'),
-                    Text(
-                      'Contact\n Admin',
-                      textAlign: TextAlign.center,
-                    )
-                  ],
-                ))
+                InkWell(
+                  onTap: () {
+                    Get.to(ContactAdmin());
+                  },
+                  child: Container(
+                      child: Column(
+                    children: [
+                      Image.asset('assets/images/contactadmin.png'),
+                      Text(
+                        'Contact\n Admin',
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  )),
+                )
               ],
             ),
             SizedBox(
@@ -209,12 +216,17 @@ class _BusinessHomeScreenState extends State<BusinessHomeScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 30),
-                    child: Container(
-                      child: Column(
-                        children: [
-                          Image.asset('assets/images/availability.png'),
-                          Text('Availability')
-                        ],
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(AvailabilityScreen());
+                      },
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Image.asset('assets/images/availability.png'),
+                            Text('Availability')
+                          ],
+                        ),
                       ),
                     ),
                   ),

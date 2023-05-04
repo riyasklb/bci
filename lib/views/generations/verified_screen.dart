@@ -1,20 +1,15 @@
 import 'package:bci/authentications/onbording/introduction_screen.dart';
-import 'package:bci/authentications/onbording/onbording1.dart';
 import 'package:bci/constands/constands.dart';
-import 'package:bci/screens/members/home_screen/Members_home_screen.dart';
-import 'package:bci/views/busines_widget/bottumnavigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import '../busines_widget/bottumnavigation.dart';
 
-import '../../screens/members/members widgets/bottumbavigation.dart';
-import '../onbording/onbording_screen.dart';
 //import '../../widgets/bottumbavigation.dart';
 
-class verified_Screen extends StatelessWidget {
-  const verified_Screen({super.key});
+class BusinessverifiedScreen extends StatelessWidget {
+  const BusinessverifiedScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +30,7 @@ class verified_Screen extends StatelessWidget {
             "Successfully",
             style: TextStyle(
                 fontSize: 19, color: Colors.black, ),
-          ),ksizedbox40,ksizedbox40,    InkWell(onTap: (){
-            Get.to(HelloConvexAppBar());},
+          ),ksizedbox40,ksizedbox40,    InkWell(onTap: (){Get.to(HomeBottomnavigationBar(index: 0,));},
               child: Padding(
                 padding: const EdgeInsets.only(left: 20,right:20 ),
                 child: Container(

@@ -1,21 +1,20 @@
+import 'dart:io';
+
 import 'package:custom_clippers/custom_clippers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+
 import '../../../constands/constands.dart';
-import 'dart:io';
 
-import 'edit_screen.dart';
-
-class BankDetailsScreen extends StatefulWidget {
-  const BankDetailsScreen({super.key});
+class EditScreen extends StatefulWidget {
+  const EditScreen({super.key});
 
   @override
-  State<BankDetailsScreen> createState() => _BankDetailsScreenState();
+  State<EditScreen> createState() => _EditScreenState();
 }
 
-class _BankDetailsScreenState extends State<BankDetailsScreen> {
+class _EditScreenState extends State<EditScreen> {
   var nameController = TextEditingController();
   var accountController = TextEditingController();
   var accountypeController = TextEditingController();
@@ -56,6 +55,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
   bool conpasswordvisible = false;
   @override
   Widget build(BuildContext context) {
+    final mediaquery = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(250),
@@ -79,9 +79,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                     padding: const EdgeInsets.only(right: 25),
                     child: Text(
                       'Bank Details',
-                      style: TextStyle(
-                          fontSize: 23,
-                          color: Colors.white),
+                      style: TextStyle(fontSize: 23, color: Color(0xffF8F9FD)),
                     ),
                   ),
                   Padding(
@@ -92,9 +90,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                             minimumSize: Size(60, 30),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12))),
-                        onPressed: () {
-                          Get.to(EditScreen());
-                        },
+                        onPressed: () {},
                         child: Text(
                           'Edit',
                           style: TextStyle(color: kblue),
@@ -202,7 +198,7 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                       : Container(
                           height: 130,
                           width: 135,
-                          color:Color(0xffE4E4E4),
+                          color: Color(0xffE4E4E4),
                           child: InkWell(
                             onTap: () {
                               showModalBottomSheet(
@@ -255,8 +251,30 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
                 ],
               ),
             ),
-            ksizedbox20,
-            
+            ksizedbox30,
+            InkWell(
+              onTap: () {
+                Get.back();
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    color: kOrange,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          offset: Offset(0.0, 0.75),
+                          blurRadius: 7,
+                          color: kyellow)
+                    ]),
+                height: 42,
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: Center(
+                    child: Text(
+                  'Submit',
+                  style: TextStyle(fontSize: 20, color: kwhite),
+                )),
+              ),
+            ),
+            ksizedbox30
           ],
         ),
       ]),

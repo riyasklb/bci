@@ -1,4 +1,5 @@
 import 'package:bci/authentications/generate_otp/generate_otp.dart';
+import 'package:bci/views/generations/generate_otp_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -101,7 +102,7 @@ class landing_screen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Get.to(HomeBottomnavigationBar
+                        Get.to(BusinessGenerate_otp
                         ());
                       },
                       child: Text(

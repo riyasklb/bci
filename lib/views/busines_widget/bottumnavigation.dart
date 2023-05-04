@@ -9,6 +9,9 @@ import 'package:bci/views/business/business_home_screen.dart';
 import '../business/notification_screen.dart';
 import '../home_screen/wallet_screen.dart';
 
+// import '../business/notification_screen.dart';
+// import '../home_screen/wallet_screen.dart';
+
 class HomeBottomnavigationBar extends StatefulWidget {
   int index;
   

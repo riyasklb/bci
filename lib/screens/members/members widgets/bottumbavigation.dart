@@ -4,8 +4,8 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../views/business/home_screen.dart';
-import '../../../views/home_screen/wallet_screen.dart';
+// import '../../../views/home_screen/wallet_screen.dart';
+
 import '../home_screen/Members_home_screen.dart';
 import '../members_search_screen/members_search_screen.dart';
 
@@ -21,7 +21,7 @@ class _HelloConvexAppBarState extends State<HelloConvexAppBar> {
       title: 'Search Result',
       items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
     ),
-    WalletScreen(),
+    // WalletScreen(),
     p4(),
     SettingScreen()
   ];
