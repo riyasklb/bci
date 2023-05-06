@@ -198,48 +198,51 @@ class _BankDetailsScreenState extends State<BankDetailsScreen> {
               child: Row(
                 children: [
                   image != null
-                      ? Image.file(image!)
-                      : Container(
-                          height: 130,
-                          width: 135,
-                          color:Color(0xffE4E4E4),
-                          child: InkWell(
-                            onTap: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return Container(
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          TextButton(
-                                              onPressed: () {
-                                                pickerimage();
-                                              },
-                                              child: Text(
-                                                'Choose ur gallery',
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 16),
-                                              )),
-                                          TextButton(
-                                              onPressed: () {
-                                                imagepic();
-                                              },
-                                              child: Text(
-                                                'Choose ur Camera',
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 16),
-                                              ))
-                                        ],
-                                      ),
-                                    );
-                                  });
-                            },
-                          ),
+                      ? Container(
+                          height: 130, width: 135, child: Image.file(image!))
+                      : InkWell(
+                          onTap: () {
+                            showModalBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return Container(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        TextButton(
+                                            onPressed: () {
+                                              pickerimage();
+                                            },
+                                            child: Text(
+                                              'Choose ur gallery',
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 16),
+                                            )),
+                                        TextButton(
+                                            onPressed: () {
+                                              imagepic();
+                                            },
+                                            child: Text(
+                                              'Choose ur Camera',
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 16),
+                                            ))
+                                      ],
+                                    ),
+                                  );
+                                });
+                          },
+                          child: Container(
+                              height: 130,
+                              width: 135,
+                              color: Color(0xffE4E4E4),
+                              child:
+                                  Image.asset('assets/images/imageupload.png')),
                         ),
+                        
                 ],
               ),
             ),

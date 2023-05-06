@@ -75,7 +75,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       'Notification',
                       style: TextStyle(
                           fontSize: 23,
-                          fontWeight: FontWeight.bold,
+                          //fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
                   ),
@@ -141,7 +141,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                     Text(
                                       todaytitle[index].toString(),
                                       style: TextStyle(
-                                          fontSize: 17,
+                                          fontSize: 19,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Padding(
@@ -149,7 +149,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                       child: Text(
                                         todaydiscription[index].toString(),
                                         style: TextStyle(
-                                            fontSize: 13, color: kgrey),
+                                            fontSize: 12, color: kgrey),
                                       ),
                                     ),
                                     Padding(

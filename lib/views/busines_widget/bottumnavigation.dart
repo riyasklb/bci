@@ -1,10 +1,13 @@
 import 'package:bci/constands/constands.dart';
+import 'package:bci/views/home_screen/bookings_screen.dart';
+import 'package:bci/views/home_screen/setting_screen.dart';
 
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bci/views/business/business_home_screen.dart';
+
 
 import '../business/notification_screen.dart';
 import '../home_screen/wallet_screen.dart';
@@ -28,8 +31,8 @@ class _HomeBottomnavigationBarState extends State<HomeBottomnavigationBar> {
     BusinessHomeScreen(),
     NotificationScreen(),
     WalletScreen(),
-    p4(),
-    p5()
+    BusinessBookingScreen(),
+    BusinessSettingScreen()
   ];
 
   int selectedpage = 0;
@@ -47,19 +50,20 @@ class _HomeBottomnavigationBarState extends State<HomeBottomnavigationBar> {
     return Scaffold(
       body: List2[selectedpage],
       bottomNavigationBar: ConvexAppBar(
-          //activeColor:kblue
+          activeColor:korange,
 
           backgroundColor: kblue,
           color: kwhite,
           style: TabStyle.reactCircle,
+
           items: [
-            TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.home, title: 'Home',),
             TabItem(
               icon: ImageIcon(
                 AssetImage(
                   'assets/images/notificationimage.png',
                 ),
-                color: selectedpage == 1 ? kblue : kwhite,
+                color: selectedpage == 1 ? kwhite : kwhite,
               ),
               title: 'Notification',
             ),
@@ -68,7 +72,7 @@ class _HomeBottomnavigationBarState extends State<HomeBottomnavigationBar> {
                   AssetImage(
                     'assets/images/bottomwallet.png',
                   ),
-                  color: selectedpage == 2 ? kblue : kwhite,
+                  color: selectedpage == 2 ? kwhite : kwhite,
                 ),
                 title: 'Wallet'),
             TabItem(
@@ -76,15 +80,19 @@ class _HomeBottomnavigationBarState extends State<HomeBottomnavigationBar> {
                   AssetImage(
                     'assets/images/bottombooking.png',
                   ),
-                  color: selectedpage == 3 ? kblue : kwhite,
+                  color: selectedpage == 3 ? kwhite : kwhite,
                 ),
                 title: 'Booking'),
             TabItem(
+              
                 icon: ImageIcon(
+                  
                   AssetImage(
                     'assets/images/bottomsetting.png',
+                    
                   ),
-                  color: selectedpage == 4 ? kblue : kwhite,
+                  color: selectedpage == 4 ? kwhite : kwhite,
+                  
                 ),
                 title: 'Settings'),
           ],
@@ -130,7 +138,7 @@ class p4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold();
   }
 }
 
@@ -139,6 +147,6 @@ class p5 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold();
   }
 }

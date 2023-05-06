@@ -57,7 +57,7 @@ class _WalletScreenState extends State<WalletScreen> {
                       'Wallet',
                       style: TextStyle(
                           fontSize: 23,
-                          fontWeight: FontWeight.bold,
+                          //fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
                   ),

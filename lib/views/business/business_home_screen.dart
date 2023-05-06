@@ -1,6 +1,11 @@
 import 'package:bci/constands/constands.dart';
+import 'package:bci/screens/members/offer%20screen/offer_screen_grid.dart';
 import 'package:bci/views/busines_widget/bottumnavigation.dart';
 import 'package:bci/views/home_screen/availability_scree.dart';
+import 'package:bci/views/home_screen/bookings_screen.dart';
+import 'package:bci/views/home_screen/offers_screen.dart';
+import 'package:bci/views/home_screen/service_booking_screen.dart';
+import 'package:bci/views/home_screen/settings/my_account_screen.dart';
 import 'package:bci/views/home_screen/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:custom_clippers/custom_clippers.dart';
@@ -40,8 +45,8 @@ class _BusinessHomeScreenState extends State<BusinessHomeScreen> {
                     child: Text(
                       'Hello,Jhon',
                       style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 23,
+                          //fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
                   ),
@@ -50,7 +55,7 @@ class _BusinessHomeScreenState extends State<BusinessHomeScreen> {
               ),
             ),
           )),
-      body: ListView(children: [
+      body: ListView(physics: BouncingScrollPhysics(), children: [
         Column(
           children: [
             CarouselSlider(
@@ -175,37 +180,52 @@ class _BusinessHomeScreenState extends State<BusinessHomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/booking.png'),
-                      Text(
-                        'Bookings\n\n',
-                        textAlign: TextAlign.center,
-                      )
-                    ],
+                InkWell(
+                  onTap: () {
+                    Get.to(BusinessBookingScreen());
+                  },
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Image.asset('assets/images/booking.png'),
+                        Text(
+                          'Bookings\n\n',
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
                   ),
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/offers.png'),
-                      Text(
-                        'Offers\n\n',
-                        textAlign: TextAlign.center,
-                      )
-                    ],
+                InkWell(
+                  onTap: () {
+                    Get.to(OffersScreen());
+                  },
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Image.asset('assets/images/offers.png'),
+                        Text(
+                          'Offers\n\n',
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
                   ),
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/servicebooking.png'),
-                      Text(
-                        'Service\nBookings\nRequest',
-                        textAlign: TextAlign.center,
-                      )
-                    ],
+                InkWell(
+                  onTap: () {
+                    Get.to(ServiceBookingScreen());
+                  },
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Image.asset('assets/images/servicebooking.png'),
+                        Text(
+                          'Service\nBookings\nRequest',
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
                   ),
                 )
               ],
@@ -232,12 +252,17 @@ class _BusinessHomeScreenState extends State<BusinessHomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 45),
-                    child: Container(
-                      child: Column(
-                        children: [
-                          Image.asset('assets/images/jhon.png'),
-                          Text('Jhon')
-                        ],
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(MyAccountScreen());
+                      },
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Image.asset('assets/images/jhon.png'),
+                            Text('Jhon')
+                          ],
+                        ),
                       ),
                     ),
                   )

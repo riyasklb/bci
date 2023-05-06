@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import '../../authentications/onbording/onbording_screen.dart';
 import '../busines_widget/bottumnavigation.dart';
 
 //import '../../widgets/bottumbavigation.dart';
@@ -30,7 +31,7 @@ class BusinessverifiedScreen extends StatelessWidget {
             "Successfully",
             style: TextStyle(
                 fontSize: 19, color: Colors.black, ),
-          ),ksizedbox40,ksizedbox40,    InkWell(onTap: (){Get.to(HomeBottomnavigationBar(index: 0,));},
+          ),ksizedbox40,ksizedbox40,    InkWell(onTap: (){Get.to(Onbording());},
               child: Padding(
                 padding: const EdgeInsets.only(left: 20,right:20 ),
                 child: Container(

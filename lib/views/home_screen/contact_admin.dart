@@ -218,7 +218,7 @@ class _ContactAdminState extends State<ContactAdmin> {
          )
         ),
           child: TextField(
-          
+          maxLines: 7,
             controller: controller,
             decoration: InputDecoration(
               enabledBorder: InputBorder.none,

@@ -23,7 +23,7 @@ class _CouponScreenState extends State<CouponScreen> {
             child: ClipPath(
               clipper: SinCosineWaveClipper(),
               child: Container(
-                height: 180,
+                height: 158,
                 color: kblue,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,8 +44,8 @@ class _CouponScreenState extends State<CouponScreen> {
                       child: Text(
                         'Coupon Redemption',
                         style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 23,
+                            //fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
                     ),

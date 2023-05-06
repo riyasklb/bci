@@ -42,7 +42,7 @@ class _CouponViewHistoryState extends State<CouponViewHistory> {
                         'View History',
                         style: TextStyle(
                             fontSize: 23,
-                            fontWeight: FontWeight.bold,
+                           // fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
                     ),
